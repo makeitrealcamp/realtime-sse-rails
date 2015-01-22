@@ -1,2 +1,17 @@
 <h1>Clock#index</h1>
-<p>Find me in app/views/clock/index.html.erb</p>
+
+<h1 id="reloj"></h1>
+
+<script>
+  $(document).ready(function(){
+
+    var evtSource = new EventSource("/clock/get_time");
+
+    evtSource.addEventListener("notification", function(e) {
+      // console.log(e);
+      obj = JSON.parse(e.data);
+      $('#reloj').html(obj.date);
+    });
+
+  });
+</script>

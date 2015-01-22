@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'clock/index'
 
+  get 'clock/get_time'
   root 'clock#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
